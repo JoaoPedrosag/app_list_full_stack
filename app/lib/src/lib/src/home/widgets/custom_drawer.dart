@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -6,6 +7,10 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationDrawer(
+      onDestinationSelected: (index) => {
+        Navigator.of(context).pop(),
+        if (index == 1) {Modular.to.pushNamed('/config')}
+      },
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 28, 16, 16),

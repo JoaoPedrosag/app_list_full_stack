@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:listinha/src/lib/src/home/widgets/custom_drawer.dart';
 import 'package:listinha/src/lib/src/shared/widgets/user_image_button.dart';
 
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {},
+        onPressed: () {
+          Modular.to.pushNamed('/edit');
+        },
         label: const Text('Nova Lista'),
         icon: const Icon(Icons.edit),
       ),
